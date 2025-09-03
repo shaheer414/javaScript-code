@@ -1,15 +1,19 @@
-import Link from "next/link";
+import Link from "next/link"
 
-export default function Home() {
+export async function generateStaticParams() {
+  const response= await fetch('https://jsonplaceholder.typicode.com/todos')
+  const data= await response.json()
+  return data.map((item)=>({
+    todoId: item.id.toString(),
+  }))
+}
+
+export default function () {
   return (
     <>
-    <h1>My Website</h1>
-    <br />
-    <Link href="/about">About</Link>
-    <br />
-    <Link href="/services">Services</Link>
-    <br />
-    <Link href="/blogs">Blogs</Link>
-    </>
+    <div className="text-3xl font-bold underline text-center">
+      My website
+    </div>
+</>
   )
 }

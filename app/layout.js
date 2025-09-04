@@ -23,15 +23,18 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <header>
         <div className="flex justify-center mt-10 ">
       <div className="flex gap-10 text-4xl font-bold border border-grey-300 rounded-2xl px-10 py-4 ">
         <Link href="./">Home</Link>
         <Link href="/about">About</Link>
         <Link href="/contact">Contact</Link>
         <Link href="/blog">Blog</Link>
+        <Link href="/posts">Post</Link>
       </div>
     </div>
+    </header>
+    {children}
       </body>
     </html>
   );

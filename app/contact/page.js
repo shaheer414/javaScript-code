@@ -5,7 +5,7 @@ const aboutpage = () => {
     return (
         <>
         <div>
-            I am contact page
+            <h1 className='text-3xl justify-center flex font-bold '>Contact Us</h1>
         </div>
     </>
 )
